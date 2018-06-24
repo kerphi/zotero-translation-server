@@ -8,6 +8,7 @@ https://academic.oup.com/neuro-oncology/article-abstract/20/suppl_2/i68/5000519?
 https://www.nature.com/articles/s41467-018-04558-1
 http://iopscience.iop.org/article/10.1088/0031-9155/50/9/014
 http://dtb.bmj.com/content/16/2/5
+https://www.sciencedirect.com/science/article/pii/S1053811917310236
 "
 
 for URL in $URLS
@@ -16,4 +17,5 @@ do
      --header "Content-Type: application/json" \
      http://127.0.0.1:8080/web \
      | jq .
+#     | jq '.[].publicationTitle, .[].ISSN, .[].title'
 done
