@@ -25,13 +25,13 @@ You can build your own zotero/translation-server docker image:
 
 ```shell
 git clone --recurse-submodules git@github.com:zotero/translation-server.git
-docker-compose -y ./docker-compose.debug.yml build
+docker-compose -f ./docker-compose.debug.yml build
 ```
 
 Then run it:
 
 ```shell
-docker-compose -y ./docker-compose.debug.yml up
+docker-compose -f ./docker-compose.debug.yml up
 ```
 
 This will build and run a fresh zotero/translation-server docker image. It could be interesting to get the latest fixes. For example sciencedirect translator is not working with the latest official docker image today (2018/06/24) but it works when building our own zotero/translation-server docker image (included the latest git changes).
