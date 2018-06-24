@@ -1,0 +1,25 @@
+version: "2"
+services:
+
+  zotero-cache:
+    container_name: zotero-cache 
+    image: nginx:1.15.0
+    ports:
+     - "8080:80"
+    links:
+      - zotero-translation-server
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
+  zotero-translation-server:
+    container_name: zotero-translation-server
+    build:
+      context: ./translation-server/
+      args:
+        - http_proxy
+        - https_proxy
+    image: zotero/translation-server
+    ports:
+      - "1969:1969"
+    volumes:
+      - ./translation-server/assets/run_translation-server.sh:/opt/translation-server/run_translation-server.sh
