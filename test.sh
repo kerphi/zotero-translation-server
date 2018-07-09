@@ -15,7 +15,7 @@ for URL in $URLS
 do
   curl -d "{\"url\":\"$URL\",\"sessionid\":\"abc123\"}" \
      --header "Content-Type: application/json" \
-     http://127.0.0.1:8080/web \
+     http://127.0.0.1:1969/web \
      | jq .
 #     | jq '.[].publicationTitle, .[].ISSN, .[].title'
 done
