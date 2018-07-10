@@ -8,9 +8,15 @@ services:
      - "1969:80"
     links:
       - zotero-translation-server
+    environment:
+      http_proxy:  ${http_proxy}
+      https_proxy: ${https_proxy}
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
 
   zotero-translation-server:
     container_name: zotero-translation-server
     image: zotero/translation-server
+    environment:
+      http_proxy:  ${http_proxy}
+      https_proxy: ${https_proxy}
