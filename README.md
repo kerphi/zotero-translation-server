@@ -7,7 +7,7 @@ Docker is used to link the cache service (nginx is used) and the zotero translat
 ## Usage
 
 ```shell
-docker-compose up
+docker-compose up -d
 ```
 
 Then you can run query this way:
